@@ -1,4 +1,5 @@
 FROM openjdk:8-jre-alpine
+RUN apk add --update bash && rm -rf /var/cache/apk/*
 RUN mkdir /opt && wget -q http://nilhcem.github.com/FakeSMTP/downloads/fakeSMTP-latest.zip && unzip fakeSMTP-latest.zip -d /opt && rm fakeSMTP-latest.zip
 RUN mv /opt/fakeSMTP*.jar /opt/fakeSMTP.jar
 EXPOSE 25
